@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 function CreatePost() {
     const [title, setTitle] = useState("");
     const [body, setBody] = useState("");
-    // let navigate = useNavigate();
+    let navigate = useNavigate();
 
     async function handleSubmit(e) {        
         e.preventDefault();
@@ -28,7 +28,7 @@ function CreatePost() {
 
         if (response.status === 200) {
             console.log(actualData.post);
-            // navigate('/');
+            navigate('/');
         }
         else {
             // console.log("failed");
@@ -42,7 +42,7 @@ function CreatePost() {
                 <div className="table-cell">
                     <div className="container">
                     <div className="row">
-                        <div className="col-md-12 align-middle" data-AOS="fade-right">
+                        <div className="col-md-12 align-middle">
                             <div>
                                 <h1 className="intro-title mb-4">Create <span className="name_big">Post</span></h1>
                                 <form onSubmit={handleSubmit}>

@@ -10,12 +10,17 @@ import 'bootstrap/dist/js/bootstrap.min.js';
 import App from './App';
 import CreatePost from './components/CreatePost'
 
+import {BrowserRouter} from 'react-router-dom';
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 // const element = <Create />;
 root.render(
-  <React.StrictMode>
-    <CreatePost />
-  </React.StrictMode>
+  <BrowserRouter>
+    <App />
+  </BrowserRouter>
+  // <React.StrictMode>
+  //   <CreatePost />
+  // </React.StrictMode>
 );
 
 reportWebVitals();
