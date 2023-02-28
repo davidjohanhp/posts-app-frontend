@@ -39,8 +39,11 @@ function GetAllPost() {
                                 {valuesArray.map(posts => {
                                         return (
                                             <div>
-                                                <p>Title: {posts.Title}</p>
+                                                <a href={"/get/"+posts.ID} >Title: {posts.Title}</a>
                                                 <p>Description: {posts.Body}</p>
+                                                {/* <button>
+                                                    <Link to={"/get/"+posts.ID} >Check Post Detail</Link>
+                                                </button> */}
                                                 <br></br>
                                             </div>
                                         );

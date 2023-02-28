@@ -6,6 +6,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 import CreatePost from './components/CreatePost'
 import GetAllPost from './components/GetAllPost'
+import GetPost from './components/GetPost';
 
 function App() {
   // return (
@@ -32,6 +33,7 @@ function App() {
         <Routes>
           <Route path="/create" element={<CreatePost/>}/>
           <Route path="/" element={<GetAllPost/>}/>
+          <Route path="/get/:id" element={<GetPost/>}/>
        </Routes>
     </div> 
 );
