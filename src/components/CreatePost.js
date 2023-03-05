@@ -71,16 +71,25 @@ function CreatePost() {
                             <div>
                                 <h1 className="intro-title mb-4">Create <span className="name_big">Post</span></h1>
                                 <form onSubmit={submitPost}>
-                                    <div className="row">
+                                    <div className="row align-middle m-3">
                                         <label>Title</label>
-                                        <input type="text" required value={title} onChange={(event) => setTitle(event.target.value)}></input>
+                                        <div className="form">
+                                            <input className="input" placeholder="Input Title" required value={title} onChange={(event) => setTitle(event.target.value)} type="text"></input>
+                                        </div>
+                                        {/* <input type="text" required value={title} onChange={(event) => setTitle(event.target.value)}></input> */}
                                     </div>
-                                    <div className="row">
-                                        <label>Body</label>
-                                        <input type="text" required value={body} onChange={(event) => setBody(event.target.value)}></input>
+                                    <div className="row align-middle m-3">
+                                        <label>Description</label>
+                                        <div className="form large-input ">
+                                            <textarea className="input" placeholder="Input Description" required value={body} onChange={(event) => setBody(event.target.value)} type="text"></textarea>
+                                        </div>
+                                        {/* <input type="text" required value={body} onChange={(event) => setBody(event.target.value)}></input> */}
                                     </div>
-                                    <div className="row">
-                                        <button type="submit">Create</button>
+                                    <div className="row mt-4">
+                                        {/* <button type="submit">Create</button> */}
+                                        <button className="create-button" type="submit">
+                                            Add Post
+                                        </button>
                                     </div>
                                 </form>
                             </div>
