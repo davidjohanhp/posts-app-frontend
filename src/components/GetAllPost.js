@@ -12,7 +12,11 @@ function GetAllPost() {
         const requestOptions = {
             method: 'GET',
             headers: { 
-                'Content-Type': 'application/json;charset=UTF-8'
+                'Content-Type': 'application/json;charset=UTF-8',
+                'Cache-Control': 'no-cache, no-store, must-revalidate',
+                'Pragma': 'no-cache',
+                'Expires': '0'
+               
             },
         };
         const response = await fetch('/get-posts', requestOptions);
