@@ -40,6 +40,7 @@ function GetAllPost() {
         axios.get(baseURL).then((response) => {
             console.log(response);
             // let actualData = response
+            console.log(response);
             setArray(response.data.posts)
         }
         ).catch(error => console.error(error))
