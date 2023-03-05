@@ -2,6 +2,7 @@ import React, {useState, useEffect} from "react";
 
 import { useNavigate, useParams } from "react-router-dom";
 import { Outlet, Link } from "react-router-dom";
+import axios from 'axios';
 
 function GetPost() {
     const [post, setPost] = useState("");
@@ -21,8 +22,26 @@ function GetPost() {
         console.log(actualData.post);
     }
 
+    const getResponse = () => { //IMPLEMENT AXIOS
+        const baseURL = 'https://posts-app-backend-production.up.railway.app/get-post';
+        const requestOptions = {
+            headers: { 
+                'Content-Type': 'application/json;charset=UTF-8',
+            },
+        };
+
+        axios.get(baseURL+'/'+id, requestOptions).then((response) => {
+            console.log(response);
+            setPost(response.data.post)
+        }
+        ).catch(error => console.error(error))
+
+        
+    }
+
     useEffect(() => {
-        handleGet()
+        // handleGet()
+        getResponse()
       })
     
     async function handleDelete() {        
