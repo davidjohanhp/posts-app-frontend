@@ -38,13 +38,6 @@ function GetAllPost() {
             },
         };
 
-        axios.get("https://api.sampleapis.com/beers/ale", requestOptions).then((response) => {
-            console.log(response);
-            // let actualData = response
-            console.log(response);
-            // setArray(response.data.posts)
-        })
-
         axios.get(baseURL, requestOptions).then((response) => {
             console.log(response);
             // let actualData = response
