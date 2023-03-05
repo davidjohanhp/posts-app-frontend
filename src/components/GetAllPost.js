@@ -29,29 +29,32 @@ function GetAllPost() {
             <div className="intro-content display-table">
                 <div className="table-cell">
                     <div className="container">
-                    <button>
-                        <Link to="/create">Create New Post</Link>
-                    </button>
-                    <div className="row">
-                        <div className="col-md-12 align-middle">
-                            <div>
-                                <h1 className="intro-title mb-4">All <span className="name_big">Posts</span></h1>                                
-                                {valuesArray.map(posts => {
-                                        return (
-                                            <div>
-                                                <a href={"/get/"+posts.ID} >Title: {posts.Title}</a>
-                                                <p>Description: {posts.Body}</p>
-                                                {/* <button>
-                                                    <Link to={"/get/"+posts.ID} >Check Post Detail</Link>
-                                                </button> */}
-                                                <br></br>
+                        <div className="row">
+                            <div className="col-md-12 align-middle">
+                                <h1 className="intro-title mb-4">All <span className="name_big">Posts</span></h1>
+                                <div className="container d-flex flex-wrap align-items-center">                        
+                                    {valuesArray.map(posts => {
+                                            return (
+                                                <div class="card">
+                                                <a href={"/get/"+posts.ID}><h3 class="card__title">{posts.Title}</h3></a>
+                                                <p class="card__content">{posts.Body}</p>
+                                                <div class="card__date">April 15, 2022</div>
+                                                <div class="card__arrow">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" height="15" width="15">
+                                                        <path fill="#fff" d="M13.4697 17.9697C13.1768 18.2626 13.1768 18.7374 13.4697 19.0303C13.7626 19.3232 14.2374 19.3232 14.5303 19.0303L20.3232 13.2374C21.0066 12.554 21.0066 11.446 20.3232 10.7626L14.5303 4.96967C14.2374 4.67678 13.7626 4.67678 13.4697 4.96967C13.1768 5.26256 13.1768 5.73744 13.4697 6.03033L18.6893 11.25H4C3.58579 11.25 3.25 11.5858 3.25 12C3.25 12.4142 3.58579 12.75 4 12.75H18.6893L13.4697 17.9697Z"></path>
+                                                    </svg>
+                                                </div>
                                             </div>
-                                        );
-                                    })
-                                }
+                                            );
+                                        })
+                                    }
+                                </div>
+                                <button className="create-button" onClick={() => navigate("/create")}>
+                                    Create New Post
+                                    {/* <Link to="/create">Create New Post</Link> */}
+                                </button>
                             </div>
                         </div>
-                    </div>
                     </div>
                 </div>
             </div>
