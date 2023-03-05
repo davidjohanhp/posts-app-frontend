@@ -2,6 +2,7 @@ import React, {useState, useEffect} from "react";
 
 import { useNavigate } from "react-router-dom";
 // import { Outlet, Link } from "react-router-dom";
+import axios from 'axios';
 
 function GetAllPost() {
     const [valuesArray, setArray] = useState([]);
@@ -20,8 +21,29 @@ function GetAllPost() {
         console.log(actualData.posts);
     }
 
+    const getResponse = () => { //IMPLEMENT AXIOS
+        // const baseURL = 'https://cors-anywhere.herokuapp.com/https://posts-app-backend-production.up.railway.app/get-posts';
+        const baseURL = 'https://posts-app-backend-production.up.railway.app/get-posts';
+        // const baseURL = 'http://localhost:8080/get-posts';
+        const requestOptions = {
+            // method: 'GET',
+            headers: { 
+                'Content-Type': 'application/json;charset=UTF-8',
+                // 'Access-Control-Allow-Headers': 'Content-Type, Authorization',
+                // 'Access-Control-Allow-Methods': '*',
+            },
+        };
+        axios.get(baseURL).then((response) => {
+            console.log(response);
+            // let actualData = response
+            setArray(response.data.posts)
+        }
+        ).catch(error => console.error(error))
+    }
+
     useEffect(() => {
-        handleGet()
+        // handleGet()
+        getResponse()
       })
 
     return (
