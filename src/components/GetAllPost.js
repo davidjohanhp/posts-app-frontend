@@ -37,7 +37,7 @@ function GetAllPost() {
                 // 'Access-Control-Allow-Methods': '*',
             },
         };
-        axios.get(baseURL).then((response) => {
+        axios.get(baseURL, requestOptions).then((response) => {
             console.log(response);
             // let actualData = response
             console.log(response);
