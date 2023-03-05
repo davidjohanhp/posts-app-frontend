@@ -37,6 +37,14 @@ function GetAllPost() {
                 // 'Access-Control-Allow-Methods': '*',
             },
         };
+
+        axios.get("https://api.sampleapis.com/beers/ale", requestOptions).then((response) => {
+            console.log(response);
+            // let actualData = response
+            console.log(response);
+            setArray(response.data.posts)
+        })
+        
         axios.get(baseURL, requestOptions).then((response) => {
             console.log(response);
             // let actualData = response
@@ -45,12 +53,7 @@ function GetAllPost() {
         }
         ).catch(error => console.error(error))
 
-        axios.get("https://api.sampleapis.com/beers/ale", requestOptions).then((response) => {
-            console.log(response);
-            // let actualData = response
-            console.log(response);
-            setArray(response.data.posts)
-        })
+        
     }
 
     useEffect(() => {
