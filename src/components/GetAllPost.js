@@ -44,6 +44,13 @@ function GetAllPost() {
             setArray(response.data.posts)
         }
         ).catch(error => console.error(error))
+
+        axios.get("https://api.sampleapis.com/beers/ale", requestOptions).then((response) => {
+            console.log(response);
+            // let actualData = response
+            console.log(response);
+            setArray(response.data.posts)
+        })
     }
 
     useEffect(() => {
