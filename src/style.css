@@ -1311,3 +1311,7 @@ body {
   top: 0px;
   left: 0px;
 }
+
+.delete-button::after {
+  background-color: rgb(246, 184, 184);;
+}

@@ -58,32 +58,45 @@ function GetPost() {
         navigate('/');
     }
 
+    const deletePost = () => { //IMPLEMENT AXIOS
+        const baseURL = 'https://posts-app-backend-production.up.railway.app/post';
+        const requestOptions = {
+            headers: { 
+                'Content-Type': 'application/json;charset=UTF-8',
+            },
+        };
+
+        axios.delete(baseURL+'/'+id, requestOptions).then((response) => {
+            console.log(response);
+            setPost(response.data.post)
+            navigate('/');
+        }
+        ).catch(error => console.error(error))
+    }
+
     return (
         <div id="create" className="intro route bg-image background">
             <div className="intro-content display-table">
                 <div className="table-cell">
                     <div className="container">
-                    <button>
-                        <Link to="/create">Create New Post</Link>
-                    </button>
-                    <button>
-                        <Link to="/">Check All Post</Link>
-                    </button>
-                    <button onClick={handleDelete}>
-                       Delete Post
-                    </button>
-                    <div className="row">
-                        <div className="col-md-12 align-middle">
-                            <div>
-                                <h1 className="intro-title mb-4">Post <span className="name_big">{post.ID}</span></h1>                                
+                        <div className="row">
+                            <div className="col-md-12 align-middle">
                                 <div>
-                                    <p>Title: {post.Title}</p>
-                                    <p>Description: {post.Body}</p>
-                                    <br></br>
+                                    <h1 className="intro-title mb-4">Post <span className="name_big">{post.ID}</span></h1>                                
+                                    <div>
+                                        <p>Title: {post.Title}</p>
+                                        <p>Description: {post.Body}</p>
+                                        <br></br>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                        <button className="create-button" onClick={() => navigate("/")}>
+                            All Posts
+                        </button>
+                        <button className="ms-5 create-button delete-button" onClick={deletePost}>
+                            Delete Post
+                        </button>
                     </div>
                 </div>
             </div>
