@@ -26,7 +26,6 @@ function GetAllPost() {
     }
 
     const getResponse = () => { //IMPLEMENT AXIOS
-        // const baseURL = 'https://cors-anywhere.herokuapp.com/https://posts-app-backend-production.up.railway.app/get-posts';
         const baseURL = 'https://posts-app-backend-production.up.railway.app/get-posts';
         // const baseURL = 'http://localhost:8080/get-posts';
         const requestOptions = {
